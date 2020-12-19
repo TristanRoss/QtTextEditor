@@ -36,7 +36,7 @@
       <widget class="QTextEdit" name="textEdit">
        <property name="font">
         <font>
-         <family>Segoe UI</family>
+         <family>Segoe UI Symbol</family>
          <pointsize>12</pointsize>
         </font>
        </property>
@@ -44,8 +44,8 @@
         <bool>false</bool>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(52, 52, 58);
-color: rgb(222, 222, 222)</string>
+        <string notr="true">background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(40, 40, 40, 255), stop:1 rgba(81, 81, 81, 255));
+color: rgb(222, 222, 222);</string>
        </property>
       </widget>
      </item>
@@ -81,8 +81,15 @@ color: rgb(222, 222, 222)</string>
     <addaction name="actionUndo"/>
     <addaction name="actionRedo"/>
    </widget>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>Options</string>
+    </property>
+    <addaction name="actionFont"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
+   <addaction name="menuOptions"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionNew">
@@ -172,6 +179,11 @@ color: rgb(222, 222, 222)</string>
    </property>
    <property name="text">
     <string>Redo</string>
+   </property>
+  </action>
+  <action name="actionFont">
+   <property name="text">
+    <string>Font</string>
    </property>
   </action>
  </widget>

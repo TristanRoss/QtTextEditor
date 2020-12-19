@@ -32,7 +32,8 @@ void MainWindow::on_actionOpen_triggered()
         QMessageBox::warning(this, "Warning", "Cannot open file : " + file.errorString());
         return;
     }
-    setWindowTitle(filename);
+    QString title = filename.mid(filename.lastIndexOf("/") + 1, filename.length() - filename.lastIndexOf("\\/"));
+    setWindowTitle(title);
     QTextStream in(&file);
     QString text = in.readAll();
     ui->textEdit->setText(text);
@@ -49,7 +50,8 @@ void MainWindow::on_actionSave_as_triggered()
         return;
     }
     currentFile = filename;
-    setWindowTitle(filename);
+    QString title = filename.mid(filename.lastIndexOf("/") + 1, filename.length() - filename.lastIndexOf("\\/"));
+    setWindowTitle(title);
     QTextStream out(&file);
     QString text = ui->textEdit->toPlainText();
     out << text;
@@ -95,4 +97,16 @@ void MainWindow::on_actionUndo_triggered()
 void MainWindow::on_actionRedo_triggered()
 {
     ui->textEdit->redo();
+}
+
+void MainWindow::on_actionFont_triggered()
+{
+    bool ok;
+
+    QFont font = QFontDialog::getFont(&ok, QFont("Segoe UI Symbol"), this);
+
+    if (ok) {
+        ui->textEdit->setFont(font);
+    }
+
 }
