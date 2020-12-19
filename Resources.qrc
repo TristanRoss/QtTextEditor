@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>delete-black-18dp.svg</file>
+        <file>create-black-18dp.svg</file>
+        <file>save-black-18dp.svg</file>
+        <file>launch-black-18dp.svg</file>
+        <file>content_paste-black-18dp.svg</file>
+        <file>content_cut-black-18dp.svg</file>
+        <file>content_copy-black-18dp.svg</file>
+        <file>add-black-18dp.svg</file>
+        <file>redo-black-18dp.svg</file>
+        <file>undo-black-18dp.svg</file>
+        <file>print-black-18dp.svg</file>
+    </qresource>
+</RCC>
